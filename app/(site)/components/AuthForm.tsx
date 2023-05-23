@@ -8,9 +8,12 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { BsGithub, BsGoogle } from "react-icons/bs";
 
+
+
 import AuthSocialButton from "@/app/(site)/components/AuthSocialButton";
 import Button from "@/app/components/Button";
 import Input from "@/app/components/inputs/Input";
+
 
 type Variant = "LOGIN" | "REGISTER";
 
@@ -88,7 +91,10 @@ function AuthForm() {
             router.push("/users");
           }
         })
-        .catch(() => toast.error("Something went wrong!"))
+        .catch((error) => {
+          console.log(error);
+          toast.error("Something went wrong!");
+        })
         .finally(() => setIsLoading(false));
     }
   };
@@ -108,7 +114,10 @@ function AuthForm() {
           // router.push("/conversations");
         }
       })
-      .catch(() => toast.error("Something went wrong!"))
+      .catch((error) => {
+        console.log(error)
+        toast.error("Something went wrong!")
+      })
       .finally(() => setIsLoading(false));
   };
 

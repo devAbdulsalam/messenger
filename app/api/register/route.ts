@@ -8,12 +8,7 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { email, name, password } = body;
 
-    if (!email || !name || !password) {
-      return new NextResponse("Missing fields", { status: 400 });
-    }
-
     const hashedPassword = await bcrypt.hash(password, 12);
-
     const user = await prisma.user.create({
       data: {
         email,
@@ -21,10 +16,18 @@ export async function POST(request: Request) {
         hashedPassword,
       },
     });
-
-    return NextResponse.json(user);
-  } catch (error: any) {
-    console.error("REGISTRATION ERROR", error.message, error.stack, error);
-    return new NextResponse("Internal Error", { status: 500 });
+    return new NextResponse(JSON.stringify(user), {
+      status: 200,
+      headers: {
+        "content-type": "applications/json",
+      },
+    });
+  } catch (error) {
+    return new NextResponse(JSON.stringify({ error: "invalid credentials" }), {
+      status: 409,
+      headers: {
+        "content-type": "applications/json",
+      },
+    });
   }
 }
