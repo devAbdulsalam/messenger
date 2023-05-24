@@ -39,8 +39,14 @@ const MobileHeader = () => {
       "
       >
         <h1 className="text-xl font-semibold">Msger</h1>
-        <button onClick={() => console.log("mobile nav")} className="p-px">
-          <HiDotsVertical className="h-6 w-6 shrink-0" aria-hidden="true" />
+        <button onClick={() => setDrawerOpen(true)} className="p-px">
+          <HiDotsVertical
+            className="h-6 w-6 shrink-0  text-sky-500
+          cursor-pointer
+          hover:text-sky-600
+          transition"
+            aria-hidden="true"
+          />
         </button>
       </div>
     </>
