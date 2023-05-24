@@ -67,17 +67,17 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
         </nav>
         <nav className="mt-4 flex flex-col justify-between items-center">
           <div
-            onClick={() => setIsOpen(true)}
-            className="cursor-pointer hover:opacity-75 transition"
-          >
-            <Avatar user={currentUser} />
-          </div>
-          <div
             onClick={() => setIsTransfer(true)}
             className="cursor-pointer hover:opacity-75 transition"
           >
             <FiSend className="h-6 w-6 shrink-0" aria-hidden="true" />
           </div>
+          <div
+            onClick={() => setIsOpen(true)}
+            className="cursor-pointer hover:opacity-75 transition"
+          >
+            <Avatar user={currentUser} />
+          </div>          
         </nav>
       </div>
     </>

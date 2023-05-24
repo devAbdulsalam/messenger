@@ -4,13 +4,17 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Conversation, User } from "@prisma/client";
 import { format } from "date-fns";
 import { Fragment, useMemo, useState } from "react";
-import { IoClose, IoTrash } from "react-icons/io5";
+import { HiArrowLeftOnRectangle } from "react-icons/hi2";
+import { IoClose} from "react-icons/io5";
+
+
 
 import Avatar from "@/app/components/Avatar";
 import AvatarGroup from "@/app/components/AvatarGroup";
 import ConfirmModal from "@/app/conversations/[conversationId]/components/ConfirmModal";
 import useActiveList from "@/app/hooks/useActiveList";
 import useOtherUser from "@/app/hooks/useOtherUser";
+
 
 interface ProfileDrawerProps {
   isOpen: boolean;
@@ -115,7 +119,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                               className="flex flex-col gap-3 items-center cursor-pointer hover:opacity-75"
                             >
                               <div className="w-10 h-10 bg-neutral-100 rounded-full flex items-center justify-center">
-                                <IoTrash size={20} />
+                                <HiArrowLeftOnRectangle size={20} />
                               </div>
                               <div className="text-sm font-light text-neutral-600">
                                 Delete
