@@ -76,11 +76,14 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({
                       <div className="relative mt-6 flex-1 px-4 sm:px-6">
                         <div className="flex flex-col items-center">
                           <div className="mb-2">
-                            {data.isGroup ? (
+                            {/* {data.isGroup ? (
                               <AvatarGroup users={data.users} />
                             ) : (
                               <Avatar user={otherUser} />
-                            )}
+                            )} */}
+                            <h3 className="text-xl text-green-500 font-bold text-center">
+                              Avatar
+                            </h3>
                           </div>
                           <div>{"title"}</div>
                           <div className="text-sm text-gray-500">
