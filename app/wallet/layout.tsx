@@ -12,7 +12,10 @@ export default async function WalletLayout({
     // @ts-expect-error Server Component
     <Sidebar>
       <div className="h-full">
-        <p>Wallet</p>
+        <div className="text-center">
+          <h2 className="text-lg">Wallet</h2>
+          <h3 className="py-2 text-xl text-green-500">Bal: 4000</h3>
+        </div>
         <UserList items={users} />
         {children}
       </div>

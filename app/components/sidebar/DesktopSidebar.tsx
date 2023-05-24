@@ -2,15 +2,13 @@
 
 import { User } from "@prisma/client";
 import { useState } from "react";
-
-
+import { FiSend } from "react-icons/fi";
 
 import Avatar from "@/app/components/Avatar";
 import DesktopItem from "@/app/components/sidebar/DesktopItem";
 import SettingsModal from "@/app/components/sidebar/SettingsModal";
 import TransferModal from "@/app/components/sidebar/TransferModal";
 import useRoutes from "@/app/hooks/useRoutes";
-
 
 interface DesktopSidebarProps {
   currentUser: User;
@@ -19,6 +17,7 @@ interface DesktopSidebarProps {
 const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
   const routes = useRoutes();
   const [isOpen, setIsOpen] = useState(false);
+  const [isTransfer, setIsTransfer] = useState(false);
 
   console.log({ currentUser }, "TEST");
 
@@ -31,8 +30,8 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
       />
       <TransferModal
         currentUser={currentUser}
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
+        isOpen={isTransfer}
+        onClose={() => setIsTransfer(false)}
       />
       <div
         className="
@@ -72,6 +71,12 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
             className="cursor-pointer hover:opacity-75 transition"
           >
             <Avatar user={currentUser} />
+          </div>
+          <div
+            onClick={() => setIsTransfer(true)}
+            className="cursor-pointer hover:opacity-75 transition"
+          >
+            <FiSend className="h-6 w-6 shrink-0" aria-hidden="true" />
           </div>
         </nav>
       </div>

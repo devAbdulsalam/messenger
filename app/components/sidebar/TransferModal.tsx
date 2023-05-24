@@ -79,7 +79,7 @@ const TransferModal: React.FC<TransferModalProps> = ({
                 text-gray-900
               "
             >
-              Profile
+              Transfer
             </h2>
             <p className="mt-1 text-sm leading-6 text-gray-600">
               Edit your Wallet information.
