@@ -32,13 +32,14 @@ const MobileHeader = () => {
         top-0
         z-40
         flex
+        py-2
         items-center
         bg-white
         border-t-[1px]
         lg:hidden
       "
       >
-        <h1 className="text-xl font-semibold">Msger</h1>
+        <h1 className="text-xl font-semibold py-1">Msger</h1>
         <button onClick={() => setDrawerOpen(true)} className="p-px">
           <HiDotsVertical
             className="h-6 w-6 shrink-0  text-sky-500

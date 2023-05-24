@@ -2,7 +2,7 @@
 
 import { User } from "@prisma/client";
 import { useState } from "react";
-import { FiSend } from "react-icons/fi";
+import { FiSettings } from "react-icons/fi";
 
 import Avatar from "@/app/components/Avatar";
 import DesktopItem from "@/app/components/sidebar/DesktopItem";
@@ -60,7 +60,7 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
                 label={item.label}
                 icon={item.icon}
                 active={item.active}
-                onClick={item.onClick}
+                // onClick={item.onClick}
               />
             ))}
           </ul>
@@ -68,16 +68,25 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
         <nav className="mt-4 flex flex-col justify-between items-center">
           <div
             onClick={() => setIsTransfer(true)}
-            className="cursor-pointer hover:opacity-75 transition"
+            className="cursor-pointer hover:opacity-75 transition my-2 flex
+            gap-x-3
+            rounded-md
+            p-3
+            text-sm
+            leading-6
+            font-semibold
+            text-gray-500
+            hover:text-black
+            hover:bg-gray-100"
           >
-            <FiSend className="h-6 w-6 shrink-0" aria-hidden="true" />
+            <FiSettings className="h-6 w-6 shrink-0" aria-hidden="true" />
           </div>
           <div
             onClick={() => setIsOpen(true)}
             className="cursor-pointer hover:opacity-75 transition"
           >
             <Avatar user={currentUser} />
-          </div>          
+          </div>
         </nav>
       </div>
     </>

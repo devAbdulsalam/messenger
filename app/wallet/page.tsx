@@ -1,6 +1,6 @@
 import EmptyState from "@/app/components/EmptyState";
 
-const People = () => {
+const wallet = () => {
   return (
     <div className="hidden lg:block lg:pl-80 h-full">
       <EmptyState />
@@ -8,4 +8,4 @@ const People = () => {
   );
 };
 
-export default People;
+export default wallet;
