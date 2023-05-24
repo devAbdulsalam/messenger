@@ -3,10 +3,14 @@
 import { User } from "@prisma/client";
 import { useState } from "react";
 
+
+
 import Avatar from "@/app/components/Avatar";
 import DesktopItem from "@/app/components/sidebar/DesktopItem";
 import SettingsModal from "@/app/components/sidebar/SettingsModal";
+import TransferModal from "@/app/components/sidebar/TransferModal";
 import useRoutes from "@/app/hooks/useRoutes";
+
 
 interface DesktopSidebarProps {
   currentUser: User;
@@ -21,6 +25,11 @@ const DesktopSidebar: React.FC<DesktopSidebarProps> = ({ currentUser }) => {
   return (
     <>
       <SettingsModal
+        currentUser={currentUser}
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
+      />
+      <TransferModal
         currentUser={currentUser}
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}

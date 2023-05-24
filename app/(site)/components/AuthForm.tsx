@@ -91,10 +91,7 @@ function AuthForm() {
             router.push("/users");
           }
         })
-        .catch((error) => {
-          console.log(error);
-          toast.error("Something went wrong!");
-        })
+        .catch(() => toast.error("Something went wrong!"))
         .finally(() => setIsLoading(false));
     }
   };
@@ -114,10 +111,7 @@ function AuthForm() {
           // router.push("/conversations");
         }
       })
-      .catch((error) => {
-        console.log(error)
-        toast.error("Something went wrong!")
-      })
+      .catch(() => toast.error("Something went wrong!"))
       .finally(() => setIsLoading(false));
   };
 
