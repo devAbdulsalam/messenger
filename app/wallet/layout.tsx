@@ -13,10 +13,6 @@ export default async function WalletLayout({
     // @ts-expect-error Server Component
     <Sidebar>
       <div className="h-full">
-        <div className="text-center py-2">
-          <h2 className="text-lg">Wallet</h2>
-          <h3 className="py-2 text-xl text-green-500">Bal: 4000</h3>
-        </div>
         <TransactionList items={users} />
         {children}
       </div>

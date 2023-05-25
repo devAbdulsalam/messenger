@@ -1,8 +1,8 @@
 "use client";
 
 import { User } from "@prisma/client";
-import TransactionBox from "./TransactionBox";
 
+import TransactionBox from "./TransactionBox";
 
 interface TransactionListProps {
   items: User[];
@@ -27,6 +27,10 @@ const TransactionList: React.FC<TransactionListProps> = ({ items }) => {
     >
       <div className="px-5">
         <div className="flex-col">
+          <div className="text-center py-2">
+            <h2 className="text-lg">Wallet</h2>
+            <h3 className="py-2 text-xl text-green-500">Bal: 4000</h3>
+          </div>
           <div
             className="
               text-2xl

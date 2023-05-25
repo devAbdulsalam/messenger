@@ -26,7 +26,7 @@ const MobileHeader = () => {
       />
       <div
         className="
-        fixed
+        sticky
         justify-between
         w-full
         top-0
