@@ -35,7 +35,7 @@ const MobileHeader = () => {
         py-2
         items-center
         bg-white
-        border-t-[1px]
+        border-b-[1px]
         lg:hidden
       "
       >
